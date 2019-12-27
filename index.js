@@ -42,7 +42,7 @@ function attachVirtuals(schema, res) {
     return;
   }
 
-  if (this._mongooseOptions.lean && this._mongooseOptions.lean.virtuals) {
+  if (this._mongooseOptions.lean && this._mongooseOptions.lean.virtuals !== false) {
     const prop = this._mongooseOptions.lean.virtuals;
     let toApply = virtuals;
     if (Array.isArray(prop)) {
